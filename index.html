@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<title>NIRIN'S BEATZ - Instrumental Store</title>
+<style>
+    /* Reset and base styles */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #ff4081;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+      font-family: 'Arial Black', Gadget, sans-serif;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ccc;
+    }
+    /* Category buttons */
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .categories button {
+      background: #ff4081;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.6);
+    }
+    .categories button:hover,
+    .categories button.active {
+      background: #e040fb;
+      box-shadow: 0 6px 20px rgba(224, 64, 251, 0.9);
+    }
+    /* Instrumental container */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .instrumental {
+      background: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease;
+    }
+    .instrumental:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 64, 129, 0.8);
+    }
+    .instrumental img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      height: 180px;
+    }
+    .instrumental .name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #ff80ab;
+    }
+    .instrumental .price {
+      color: #ff4081;
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    .btn-buy {
+      background: #ff4081;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(255,64,129,0.5);
+    }
+    .btn-buy:hover {
+      background: #e040fb;
+      box-shadow: 0 8px 20px rgba(224,64,251,0.8);
+    }
+    /* Hide instrumental */
+    .hidden {
+      display: none;
+    }
+    /* Responsive */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .categories button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+</style>
+  </head>
+  <body>
+
+	<header>
+	  <h1>NIRIN'S BEATZ</h1>
+	  <p>Producer &amp; Beat Maker</p>
+	</header>
+
+	<div class="categories">
+	  <button class="filter-btn active" data-category="all">All</button>
+	  <button class="filter-btn" data-category="afrobeat">Afrobeat</button>
+	  <button class="filter-btn" data-category="afropop">Afropop</button>
+	  <button class="filter-btn" data-category="drill">Drill</button>
+	</div>
+
+	<div class="container">
+
+	  <!-- Instrumental 1 -->
+	  <div class="instrumental" data-category="afrobeat">
+		<img src="https://i.imgur.com/9u2KR6A.jpg" alt="Afrobeat Beat 1" />
+		<div class="name">Afrobeat Vibes</div>
+		<div class="price">$10.00</div>
+		<button class="btn-buy" onclick="alert('Thank you for purchasing Afrobeat Vibes!')">Buy Now</button>
+	  </div>
+
+	  <!-- Instrumental 2 -->
+	  <div class="instrumental" data-category="afropop">
+		<img src="https://i.imgur.com/c2YkQch.jpg" alt="Afropop Beat 2" />
+		<div class="name">Afropop Energy</div>
+		<div class="price">$10.00</div>
+		<button class="btn-buy" onclick="alert('Thank you for purchasing Afropop Energy!')">Buy Now</button>
+	  </div>
+
+	  <!-- Instrumental 3 -->
+	  <div class="instrumental" data-category="drill">
+		<img src="https://i.imgur.com/6PCvRzv.jpg" alt="Drill Beat 3" />
+		<div class="name">Drill Fire</div>
+		<div class="price">$10.00</div>
+		<button class="btn-buy" onclick="alert('Thank you for purchasing Drill Fire!')">Buy Now</button>
+	  </div>
+
+	  <!-- Instrumental 4 (Afrobeat) -->
+	  <div class="instrumental" data-category="afrobeat">
+		<img src="https://i.imgur.com/oRk3FLF.jpg" alt="Afrobeat Beat 4" />
+		<div class="name">Afrobeat Groove</div>
+		<div class="price">$10.00</div>
+		<button class="btn-buy" onclick="alert('Thank you for purchasing Afrobeat Groove!')">Buy Now</button>
+	  </div>
+
+	</div>
+
+<script>
+  // Filter instrumentals by category
+  const buttons = document.querySelectorAll('.filter-btn');
+  const instrumentals = document.querySelectorAll('.instrumental');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active from all buttons
+      buttons.forEach(btn => btn.classList.remove('active'));
+      // Add active to clicked button
+      button.classList.add('active');
+
+      const category = button.getAttribute('data-category');
+
+      instrumentals.forEach(inst => {
+        if (category === 'all' || inst.getAttribute('data-category') === category) {
+          inst.classList.remove('hidden');
+        } else {
+          inst.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+  </body>
+</html>
+
